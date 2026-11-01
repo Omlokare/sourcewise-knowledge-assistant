@@ -1,15 +1,16 @@
 services:
   - type: web
-    name: sourcewise
+    name: sourcewise-knowledge-assistant
     runtime: docker
     plan: free
     healthCheckPath: /api/health
+    autoDeployTrigger: commit
     envVars:
       - key: SECRET_KEY
         generateValue: true
       - key: DATABASE_PATH
         value: /data/sourcewise.db
+      - key: MAX_UPLOAD_MB
+        value: "20"
       - key: CORS_ORIGINS
-        value: https://sourcewise.onrender.com
-      - key: OPENAI_API_KEY
-        sync: false
+        value: https://sourcewise-knowledge-assistant.onrender.com

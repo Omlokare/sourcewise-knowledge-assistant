@@ -42,7 +42,7 @@ Set `VITE_API_URL=http://localhost:8000` in `frontend/.env.local` if the API is 
 
 ## Deploy
 
-Deploy the Docker image to Render, Railway, Fly.io, or any container host. Set `SECRET_KEY`, optionally `OPENAI_API_KEY`, and mount a persistent disk at `/data` with `DATABASE_PATH=/data/sourcewise.db`. Configure the service to expose port 8000. For production, use managed Postgres (replace the SQLite repository) and object storage for original uploads; this starter stores extracted text and metadata in SQLite and limits uploads to 20 MB.
+Deploy the Docker image to Render, Railway, Fly.io, or any container host. The included Render Blueprint uses the free web service plan for a demo. Set `SECRET_KEY` and optionally `OPENAI_API_KEY`. The free plan has an ephemeral filesystem, so uploaded documents and chat history can disappear when the service restarts or redeploys. For persistent production use, switch to a paid Render web service with a disk mounted at `/data` (currently about $7/month for the service plus $0.25/GB/month for disk storage), or migrate the repository from SQLite to managed Postgres and use object storage for original uploads. The application limits uploads to 20 MB.
 
 ## GitHub
 

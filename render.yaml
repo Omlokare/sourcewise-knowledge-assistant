@@ -2,7 +2,7 @@ services:
   - type: web
     name: sourcewise
     runtime: docker
-    plan: starter
+    plan: free
     healthCheckPath: /api/health
     envVars:
       - key: SECRET_KEY
@@ -13,7 +13,3 @@ services:
         value: https://sourcewise.onrender.com
       - key: OPENAI_API_KEY
         sync: false
-    disk:
-      name: sourcewise-data
-      mountPath: /data
-      sizeGB: 1

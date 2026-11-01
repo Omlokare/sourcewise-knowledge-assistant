@@ -1,0 +1,14 @@
+services:
+  sourcewise:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      DATABASE_PATH: /data/sourcewise.db
+    volumes:
+      - sourcewise_data:/data
+    restart: unless-stopped
+volumes:
+  sourcewise_data:

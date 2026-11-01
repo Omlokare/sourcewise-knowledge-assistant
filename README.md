@@ -2,6 +2,12 @@
 
 A full-stack document Q&A starter inspired by the supplied project brief. Upload PDF, DOCX, and TXT files, ask questions across a searchable knowledge base, and inspect page/source citations. Includes accounts, chat history, an evaluation page, Docker deployment, and a local extractive mode.
 
+## About the project
+
+Sourcewise helps people find answers in their own documents instead of searching files one by one. Upload PDFs, Word documents, or text files, then ask questions in plain language. The app extracts and chunks the content, ranks relevant passages, and displays source excerpts with page citations so answers can be checked against the originals.
+
+The project uses a React interface and a FastAPI backend. It includes account sign-in, private document libraries, saved conversations, and an evaluation dashboard. Add an OpenAI API key to generate concise answers from retrieved passages; without a key, Sourcewise runs in local extractive mode. Docker and Render configuration are included for local setup and deployment.
+
 ## Quick start (Docker)
 
 1. Copy `.env.example` to `.env` and set `SECRET_KEY` to a long random value.
